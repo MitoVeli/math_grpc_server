@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  math_server:
+    build: .
+    image: math_server
+    restart: always
+    ports:
+      - 8080:8080
