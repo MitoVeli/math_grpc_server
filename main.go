@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	grpc "github.com/MitoVeli/math_grpc_server/grpc"
@@ -17,14 +16,7 @@ func main() {
 	// TODO: modify project structre as asked
 
 	// initialize mathOperationsService
-	mathOperationsService := mathOperationsService.NewMathOperationsService()
-
-	// TODO: to be deleted
-	var result int32
-	mathOperationsService.Add(1, 2, &result)
-
-	fmt.Println("the result is", result)
-	////////////
+	mathOperationsService.NewMathOperationsService()
 
 	// initialize gRPC server
 	go grpc.GrpcServer()
