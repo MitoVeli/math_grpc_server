@@ -3,8 +3,11 @@ package main
 import (
 	"net/http"
 
-	grpc "github.com/MitoVeli/math_grpc_server/grpc"
-	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg"
+	configs "math_grpc_server/configs"
+
+	grpc "math_grpc_server/grpc"
+
+	mathOperationsService "math_grpc_server/pkg"
 )
 
 func main() {
@@ -23,7 +26,7 @@ func main() {
 
 	// start http server
 	s := http.Server{
-		Addr: ":8080",
+		Addr: configs.AppPort,
 	}
 	s.ListenAndServe()
 
