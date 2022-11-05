@@ -4,6 +4,7 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/MitoVeli/math_grpc_client/grpc"
 	"google.golang.org/grpc"
 )
 
@@ -23,7 +24,7 @@ func GrpcServer() {
 	}
 
 	s := grpc.NewServer()
-	RegisterMathOperationsServer(s, NewGrpcServer())
+	pb.RegisterMathOperationsServer(s, NewGrpcServer())
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
