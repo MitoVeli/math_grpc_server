@@ -3,11 +3,11 @@ package main
 import (
 	"net/http"
 
-	configs "math_grpc_server/configs"
+	configs "github.com/MitoVeli/math_grpc_server/configs"
 
-	grpc "math_grpc_server/grpc"
+	grpc "github.com/MitoVeli/math_grpc_server/grpc"
 
-	mathOperationsService "math_grpc_server/pkg"
+	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg"
 )
 
 func main() {
