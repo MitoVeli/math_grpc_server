@@ -16,7 +16,7 @@ type MathOperationsServiceServer struct {
 
 func (s *MathOperationsServiceServer) Add(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
 
-	if err := s.mathOperationsService.Add(in.A, in.B, &in.Result); err != nil {
+	if err := s.mathOperationsService.DoMath(in.X, in.Y, in.OperationSign, &in.Result); err != nil {
 		log.Println("error in Add method", err)
 		return nil, errors.New("failed to add")
 	}
