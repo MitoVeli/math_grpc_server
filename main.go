@@ -12,8 +12,6 @@ import (
 
 func main() {
 
-	// TODO: add variables to config file
-	// TODO: built client app for grpc
 	// TODO: add tests
 	// TODO: add rest of the operations
 	// TODO: modify project structre as asked
