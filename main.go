@@ -12,9 +12,11 @@ import (
 
 func main() {
 
-	// TODO: add tests
-	// TODO: add rest of the operations
-	// TODO: modify project structre as asked
+	// TODO: tests
+	// TODO: check config
+	// TODO: check project structure, server, docker etc
+	// TODO: check folder structure as asked!
+	// TODO: check all comments and add if necessary
 
 	// initialize mathOperationsService
 	mathOperationsService.NewMathOperationsService()

@@ -17,8 +17,8 @@ type MathOperationsServiceServer struct {
 func (s *MathOperationsServiceServer) Add(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
 
 	if err := s.mathOperationsService.DoMath(in.X, in.Y, in.OperationSign, &in.Result); err != nil {
-		log.Println("error in Add method", err)
-		return nil, errors.New("failed to add")
+		log.Printf("error occured while math operation: %d %s %d, error: %v", in.X, in.OperationSign, in.Y, err)
+		return nil, errors.New("error occured while math operation")
 	}
 
 	// return user

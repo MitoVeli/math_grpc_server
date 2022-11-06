@@ -29,6 +29,9 @@ func (s *mathOperationsService) DoMath(x int64, y int64, operationSign string, r
 			return err
 		}
 	case enums.DIVIDE:
+		if y == 0 {
+			return errors.New("cannot divide by zero")
+		}
 		if err := s.divide(x, y, result); err != nil {
 			return err
 		}
