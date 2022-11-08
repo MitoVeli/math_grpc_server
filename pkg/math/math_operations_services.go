@@ -13,7 +13,7 @@ func NewMathOperationsService() MathOperations {
 	return &mathOperationsService{}
 }
 
-func (s *mathOperationsService) DoMath(x float64, y float64, operationSign string, result *float64) error {
+func (s *mathOperationsService) DoMath(x float32, y float32, operationSign string, result *float32) error {
 
 	switch operationSign {
 	case enums.ADD:
@@ -42,22 +42,22 @@ func (s *mathOperationsService) DoMath(x float64, y float64, operationSign strin
 	return nil
 }
 
-func (s *mathOperationsService) add(x float64, y float64, result *float64) error {
+func (s *mathOperationsService) add(x float32, y float32, result *float32) error {
 	*result = x + y
 	return nil
 }
 
-func (s *mathOperationsService) subtract(x float64, y float64, result *float64) error {
+func (s *mathOperationsService) subtract(x float32, y float32, result *float32) error {
 	*result = x - y
 	return nil
 }
 
-func (s *mathOperationsService) multiply(x float64, y float64, result *float64) error {
+func (s *mathOperationsService) multiply(x float32, y float32, result *float32) error {
 	*result = x * y
 	return nil
 }
 
-func (s *mathOperationsService) divide(x float64, y float64, result *float64) error {
+func (s *mathOperationsService) divide(x float32, y float32, result *float32) error {
 	*result = x / y
 	return nil
 }
