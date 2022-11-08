@@ -14,7 +14,7 @@ type MathOperationsServiceServer struct {
 	mathOperationsService mathOperationsService.MathOperations
 }
 
-func (s *MathOperationsServiceServer) Add(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
+func (s *MathOperationsServiceServer) DoMath(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
 
 	if err := s.mathOperationsService.DoMath(in.X, in.Y, in.OperationSign, &in.Result); err != nil {
 		log.Printf("error occured while math operation: %d %s %d, error: %v", in.X, in.OperationSign, in.Y, err)
