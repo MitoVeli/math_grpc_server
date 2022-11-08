@@ -1,5 +1,5 @@
 package pkg
 
 type MathOperations interface {
-	DoMath(x int64, y int64, operationSign string, result *int64) error
+	DoMath(x float64, y float64, operationSign string, result *float64) error
 }

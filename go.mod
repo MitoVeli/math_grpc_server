@@ -3,7 +3,7 @@ module github.com/MitoVeli/math_grpc_server
 go 1.18
 
 require (
-	github.com/MitoVeli/math_grpc_client v0.0.0-20221108195614-dc77a9f48907
+	github.com/MitoVeli/math_grpc_client v0.0.0-20221108200150-f6b3e436d025
 	github.com/stretchr/testify v1.8.1
 	github.com/test-go/testify v1.1.4
 	google.golang.org/grpc v1.50.1
