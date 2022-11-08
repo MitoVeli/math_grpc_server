@@ -5,9 +5,9 @@ import (
 
 	configs "github.com/MitoVeli/math_grpc_server/configs"
 
-	grpc "github.com/MitoVeli/math_grpc_server/grpc"
+	grpc "github.com/MitoVeli/math_grpc_server/pkg/grpc"
 
-	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg"
+	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg/math"
 )
 
 func main() {

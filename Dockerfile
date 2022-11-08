@@ -1,16 +1,17 @@
-FROM golang:1.18 AS build
-
-WORKDIR /go/src/github.com/MitoVeli/math_grpc_server
+# syntax=docker/dockerfile:1
+# specify the base image to  be used for the application, alpine or ubuntu
+FROM golang:1.17-alpine
+# create a working directory inside the image
+WORKDIR /app
+# copy Go modules and dependencies to image
+COPY go.mod go.sum ./
+# download Go modules and dependencies
+RUN go mod download
+# copy directory files i.e all files ending with .go
 COPY . .
-
-RUN go build -o /go/bin/math_grpc_server
-
-FROM gcr.io/distroless/base-debian10
-
-COPY --from=build /go/bin/math_grpc_server /go/bin/math_grpc_server
-
-ENV APP_PORT=8080
-ENV GRPC_PORT=50052
-
-ENTRYPOINT ["/go/bin/math_grpc_server"]
-
+# compile application
+RUN go build -o /cmd/math_grpc_server ./cmd/math_grpc_server
+# tells Docker that the container listens on specified network ports at runtime
+EXPOSE 8080
+# command to be used to execute when the image is used to start a container
+ENTRYPOINT ["/cmd/math_grpc_server"]

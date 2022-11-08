@@ -5,8 +5,8 @@ import (
 	"errors"
 	"log"
 
-	pb "github.com/MitoVeli/math_grpc_client/grpc"
-	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg"
+	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc"
+	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg/math"
 )
 
 type MathOperationsServiceServer struct {
