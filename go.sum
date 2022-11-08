@@ -2,6 +2,8 @@ github.com/MitoVeli/math_grpc_client v0.0.0-20221108195614-dc77a9f48907 h1:7M1Ce
 github.com/MitoVeli/math_grpc_client v0.0.0-20221108195614-dc77a9f48907/go.mod h1:0TfesrxHddQ69o6CmYcXLv8SDxhB9Pe7gYN6WhtUgKo=
 github.com/MitoVeli/math_grpc_client v0.0.0-20221108200150-f6b3e436d025 h1:NGPg/uB9Jc3QDwm2b7ggL9EXlOOcW4KirJ8lOzVTBjo=
 github.com/MitoVeli/math_grpc_client v0.0.0-20221108200150-f6b3e436d025/go.mod h1:f8iYrgCawltXf7V4cBcPEPnO0r40mRV2+awSb3yX5CI=
+github.com/MitoVeli/math_grpc_client v0.0.0-20221108225615-3a59e1a63a1c h1:iGD49GKY+wO1XExbxdciSEQTDj+1A8avftyUHuIhlzU=
+github.com/MitoVeli/math_grpc_client v0.0.0-20221108225615-3a59e1a63a1c/go.mod h1:WsvK/3BJ7yE/Ux1dIasJlVWN7UMr3R/FnjvRd0APitE=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
