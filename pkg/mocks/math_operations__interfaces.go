@@ -10,11 +10,11 @@ type MathOperations struct {
 }
 
 // DoMath provides a mock function with given fields: x, y, operationSign, result
-func (_m *MathOperations) DoMath(x int64, y int64, operationSign string, result *int64) error {
+func (_m *MathOperations) DoMath(x float32, y float32, operationSign string, result *float32) error {
 	ret := _m.Called(x, y, operationSign, result)
 
 	var r0 error
-	if rf, ok := ret.Get(0).(func(int64, int64, string, *int64) error); ok {
+	if rf, ok := ret.Get(0).(func(float32, float32, string, *float32) error); ok {
 		r0 = rf(x, y, operationSign, result)
 	} else {
 		r0 = ret.Error(0)
