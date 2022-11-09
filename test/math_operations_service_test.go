@@ -11,6 +11,7 @@ func TestDoMath(t *testing.T) {
 
 	firstNumber := float32(10)
 	secondNumber := float32(5)
+	invalidOperationSign := "&"
 	var result float32
 
 	mathOperationsService := mathOperations.NewMathOperationsService()
@@ -54,10 +55,10 @@ func TestDoMath(t *testing.T) {
 		assert.Equal(t, "cannot divide by zero", err.Error())
 	})
 
-	t.Run("Bad operation operator", func(t *testing.T) {
+	t.Run("Invalid operation sign", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, "&", &result)
+		err := mathOperationsService.DoMath(firstNumber, secondNumber, invalidOperationSign, &result)
 
-		assert.Equal(t, "invalid operation sign, operation sign:&", err.Error())
+		assert.Equal(t, "invalid operation sign: "+invalidOperationSign, err.Error())
 	})
 }

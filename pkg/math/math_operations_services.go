@@ -36,7 +36,7 @@ func (s *mathOperationsService) DoMath(x float32, y float32, operationSign strin
 			return err
 		}
 	default:
-		return errors.New("invalid operation sign, operation sign:" + operationSign)
+		return errors.New("invalid operation sign: " + operationSign)
 	}
 
 	return nil
