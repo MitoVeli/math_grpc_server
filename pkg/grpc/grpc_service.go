@@ -5,7 +5,7 @@ import (
 	"errors"
 	"log"
 
-	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc"
+	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc/math"
 	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg/math"
 )
 

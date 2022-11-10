@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc"
+	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc/math"
 	configs "github.com/MitoVeli/math_grpc_server/configs"
 	"google.golang.org/grpc"
 )
