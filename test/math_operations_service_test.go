@@ -18,7 +18,7 @@ func TestDoMath(t *testing.T) {
 
 	t.Run("Add", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, "+", &result)
+		err := mathOperationsService.Calculate(firstNumber, secondNumber, "+", &result)
 
 		assert.Equal(t, result, firstNumber+secondNumber)
 		assert.Nil(t, err)
@@ -26,7 +26,7 @@ func TestDoMath(t *testing.T) {
 
 	t.Run("Subtract", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, "-", &result)
+		err := mathOperationsService.Calculate(firstNumber, secondNumber, "-", &result)
 
 		assert.Equal(t, result, firstNumber-secondNumber)
 		assert.Nil(t, err)
@@ -34,7 +34,7 @@ func TestDoMath(t *testing.T) {
 
 	t.Run("Multiply", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, "*", &result)
+		err := mathOperationsService.Calculate(firstNumber, secondNumber, "*", &result)
 
 		assert.Equal(t, result, firstNumber*secondNumber)
 		assert.Nil(t, err)
@@ -42,7 +42,7 @@ func TestDoMath(t *testing.T) {
 
 	t.Run("Divide", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, "/", &result)
+		err := mathOperationsService.Calculate(firstNumber, secondNumber, "/", &result)
 
 		assert.Equal(t, result, firstNumber/secondNumber)
 		assert.Nil(t, err)
@@ -50,14 +50,14 @@ func TestDoMath(t *testing.T) {
 
 	t.Run("Divide by zero", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(0, 0, "/", &result)
+		err := mathOperationsService.Calculate(0, 0, "/", &result)
 
 		assert.Equal(t, "cannot divide by zero", err.Error())
 	})
 
 	t.Run("Invalid operation sign", func(t *testing.T) {
 
-		err := mathOperationsService.DoMath(firstNumber, secondNumber, invalidOperationSign, &result)
+		err := mathOperationsService.Calculate(firstNumber, secondNumber, invalidOperationSign, &result)
 
 		assert.Equal(t, "invalid operation sign: "+invalidOperationSign, err.Error())
 	})

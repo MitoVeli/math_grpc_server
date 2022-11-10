@@ -14,10 +14,10 @@ type MathOperationsServiceServer struct {
 	mathOperationsService mathOperationsService.MathOperations
 }
 
-func (s *MathOperationsServiceServer) DoMath(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
+func (s *MathOperationsServiceServer) Calculate(ctx context.Context, in *pb.OperationRequest) (*pb.OperationResponse, error) {
 	var result float32
 
-	if err := s.mathOperationsService.DoMath(in.X, in.Y, in.OperationSign, &result); err != nil {
+	if err := s.mathOperationsService.Calculate(in.X, in.Y, in.OperationSign, &result); err != nil {
 		log.Printf("error occured while math operation: %f %s %f, error: %v", in.X, in.OperationSign, in.Y, err)
 		return nil, errors.New("error occured while math operation")
 	}

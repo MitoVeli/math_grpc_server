@@ -13,7 +13,7 @@ func NewMathOperationsService() MathOperations {
 	return &mathOperationsService{}
 }
 
-func (s *mathOperationsService) DoMath(x float32, y float32, operationSign string, result *float32) error {
+func (s *mathOperationsService) Calculate(x float32, y float32, operationSign string, result *float32) error {
 
 	switch operationSign {
 	case enums.ADD:
