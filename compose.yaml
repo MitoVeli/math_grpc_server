@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  math_client:
+  math_server:
     build: .
     restart: always
     ports:

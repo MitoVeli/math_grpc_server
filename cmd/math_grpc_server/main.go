@@ -8,16 +8,17 @@ import (
 
 	grpc "github.com/MitoVeli/math_grpc_server/pkg/grpc"
 
-	mathOperationsService "github.com/MitoVeli/math_grpc_server/pkg/math"
+	mathService "github.com/MitoVeli/math_grpc_server/pkg/math"
 )
 
 func main() {
 
 	// initialize mathOperationsService
-	mathOperationsService.NewMathOperationsService()
+	mathOperationService := mathService.NewMathOperationsService()
 
 	// initialize gRPC server
-	go grpc.GrpcServer()
+	mathServer := grpc.NewMathOperationsServiceServer(mathOperationService)
+	go grpc.GrpcServer(mathServer)
 
 	log.Printf("gRPC server started on port: %s", configs.GrpcPort)
 

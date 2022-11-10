@@ -10,14 +10,16 @@ import (
 )
 
 type Server struct {
-	MathOperationsServiceServer
+	*MathOperationsServiceServer
 }
 
-func NewGrpcServer() *Server {
-	return &Server{}
+func NewGrpcServer(mathOperationsServiceServer *MathOperationsServiceServer) *Server {
+	return &Server{
+		MathOperationsServiceServer: mathOperationsServiceServer,
+	}
 }
 
-func GrpcServer() {
+func GrpcServer(mathOperationsServiceServer *MathOperationsServiceServer) {
 
 	lis, err := net.Listen("tcp", configs.GrpcPort)
 	if err != nil {
@@ -26,7 +28,7 @@ func GrpcServer() {
 	}
 
 	s := grpc.NewServer()
-	pb.RegisterMathOperationsServer(s, NewGrpcServer())
+	pb.RegisterMathOperationsServer(s, NewGrpcServer(mathOperationsServiceServer))
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
