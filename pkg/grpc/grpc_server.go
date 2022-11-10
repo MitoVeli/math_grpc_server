@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc/math"
+	pb "github.com/MitoVeli/math_grpc_client/pkg/grpc"
 	configs "github.com/MitoVeli/math_grpc_server/configs"
 	"google.golang.org/grpc"
 )
@@ -18,6 +18,7 @@ func NewGrpcServer() *Server {
 }
 
 func GrpcServer() {
+
 	lis, err := net.Listen("tcp", configs.GrpcPort)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

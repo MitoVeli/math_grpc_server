@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	configs "github.com/MitoVeli/math_grpc_server/configs"
@@ -17,6 +18,8 @@ func main() {
 
 	// initialize gRPC server
 	go grpc.GrpcServer()
+
+	log.Printf("gRPC server started on port: %s", configs.GrpcPort)
 
 	// start http server
 	s := http.Server{
